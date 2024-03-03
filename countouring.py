@@ -6,7 +6,7 @@ from get_hsv_values import get_limits # Set masking parameters through here
 
 arrowlength = 50 # constant to describe how large the  arrow is in pixels.
 cap = cv.VideoCapture(0) # open video capture device for camera
-colour = [255,0,0] #constant to select what colour to mask *(IN BGR)*
+colour = [255 ,0,0] #constant to select what colour to mask *(IN BGR)*
 
 # sets the frame dimensions *IDEALLY SET CAMERA RES TO AVOID DIGITAL STRETCH BEFORE DISPLAY* 
 cap.set(cv.CAP_PROP_FRAME_WIDTH, 640) 
@@ -25,9 +25,9 @@ while True:
     contour = imutils.grab_contours(contour)
     
     # setup of axis and central rectangle
-    cv.arrowedLine(frame,(320,240),(320+arrowlength,240),[255,0,0],2)
+    cv.arrowedLine(frame,(320,240),(320-arrowlength,240),[255,0,0],2)
     cv.arrowedLine(frame,(320,240),(320,240-arrowlength),[0,0,255],2)
-    cv.putText(frame,"x",(320+arrowlength-10,240-10),cv.FONT_HERSHEY_SIMPLEX,0.5,[255,0,0])
+    cv.putText(frame,"x",(320-arrowlength-10,240-10),cv.FONT_HERSHEY_SIMPLEX,0.5,[255,0,0])
     cv.putText(frame,"y",(320+10,240-arrowlength),cv.FONT_HERSHEY_SIMPLEX,0.5,[0,0,255])
     cv.rectangle(frame,(320-20,240+20),(320+20,240-20),[0,255,255],1)
     
