@@ -51,6 +51,8 @@ while True:
             elif cx >340:
                 print("move right")
                 # leftmotorspeed > rightmotorspeed 
+            elif 300<cx<340:
+                print("stop")
 
     #displays images 
     cv.imshow('masked', cv.flip(cv.resize(frame,(960,720)),1))
