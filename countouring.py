@@ -46,16 +46,16 @@ while True:
             cv.circle(frame, (cx, cy), 5, (255, 255, 255), -1)
             cv.putText(frame,"centroid", (cx-20,cy-20),cv.FONT_HERSHEY_SIMPLEX,0.5,[255,255,255])
             if cx < 300:
-                print("move left")
+                print("move right")
                 # rightmotorspeed > leftmotorspeed
             elif cx >340:
-                print("move right")
+                print("move left")
                 # leftmotorspeed > rightmotorspeed 
             elif 300<cx<340:
                 print("stop")
 
     #displays images 
-    cv.imshow('masked', cv.resize(frame,(960,720)))
+    cv.imshow('masked', cv.flip(cv.resize(frame,(960,720)),1))
 
     if cv.waitKey(10) & 0xFF==ord(' '):
         break
