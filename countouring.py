@@ -36,7 +36,7 @@ while True:
         area = cv.contourArea(c)
         
         cv.drawContours(frame,[c],-1,(0,255,0),3)
-        if area > 5000:
+        if area > 8000:
             moment = cv.moments(c)
             # calculates centroid based of moments on x and y axis. 
             cx = int(moment["m10"]/moment["m00"])
@@ -55,7 +55,7 @@ while True:
                 print("stop")
 
     #displays images 
-    cv.imshow('masked', cv.flip(cv.resize(frame,(960,720)),1))
+    cv.imshow('masked', cv.resize(frame,(960,720)))
 
     if cv.waitKey(10) & 0xFF==ord(' '):
         break
